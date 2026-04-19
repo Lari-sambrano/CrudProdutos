@@ -1,0 +1,15 @@
+{
+    "name": "laris/crud-produtos",
+    "authors": [
+        {
+            "name": "Lari-sambrano",
+            "email": "larissasambrano3@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Src\\": "src/"
+        }
+    },
+    "require": {}
+}

@@ -3,7 +3,7 @@
 //Pega a SQL da classe _SQL
 //Prepara o statement com prepare()
 //Vincula os valores com bindValue() (evita SQL Injection)
-//Executa e retorna o resultado
+//cliquei e nExecuta e retorna o resultado
 
 namespace Src\Model;
 

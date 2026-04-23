@@ -1,3 +1,4 @@
+//Antes de qualquer coisa, carrega o mapa do Composer que sabe onde cada classe está
 <?php
 include_once dirname(__DIR__, 3) . '/vendor/autoload.php';
 

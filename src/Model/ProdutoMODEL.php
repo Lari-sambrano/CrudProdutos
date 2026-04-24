@@ -18,6 +18,11 @@ class ProdutoMODEL
     public function __construct()
     {
         $this->conexao = Conexao::retornarConexao();
+        // $this->conexao → é o PDO
+        // ->prepare() → PDO prepara o SQL
+        // ->bindValue() → PDO substitui os ? pelos valores reais
+        // ->execute() → PDO executa no banco
+        // ->fetch() / ->fetchAll() → PDO retorna os dados
     }
 
     public function ListarMODEL(): array

@@ -14,13 +14,17 @@ class Conexao
     public static function retornarConexao()
     {
         //Verifica se a conexão ainda não foi criada.
-        //self::$conexao acessa a variável estática da classe
+        //self::$conexao - acessa a variável estática da classe
+        // if (!self::$conexao) garante que o PDO é criado só uma vez,
+        // mesmo que você chame o método várias vezes. Isso se chama Singleton.
         if (!self::$conexao) {
             //Cria uma nova conexão com o banco usando a classe PDO
             self::$conexao = new \PDO(
                 'mysql:host=localhost;dbname=db_produtos;charset=utf8',
                 'root',
                 '',
+                //ATTR_ERRMODE => ERRMODE_EXCEPTION → se der erro, lança uma Exception
+                // (por isso o try/catch na Model funciona)
                 [\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION]
             );
         }

@@ -23,11 +23,13 @@ class ProdutoCTRL
     {
         if (empty($vo->getNome()) || empty($vo->getPreco()) || empty($vo->getQuantidade()))
             return 0;
-
+        //Preço não pode ser menor ou igual a zero, e quantidade não pode ser negativa
         if ($vo->getPreco() <= 0 || $vo->getQuantidade() < 0)
             return 0;
-
+        //defne o status do produto como 1 (ativo) antes de chamar o método de cadastro no modelo
         $vo->setStatus(1);
+        //Chama o método CadastrarMODEL da camada Model
+        //Passa o objeto $vo já validado
         return $this->model->CadastrarMODEL($vo);
     }
 
